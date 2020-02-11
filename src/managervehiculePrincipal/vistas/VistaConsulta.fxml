@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="406.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managervehiculePrincipal.vistas.VistaConsultaController">
+   <center>
+      <AnchorPane id="AnchorPane" prefHeight="248.0" prefWidth="718.0">
+         <children>
+            <TableView fx:id="tableDatos" prefHeight="258.0" prefWidth="718.0">
+              <columns>
+                <TableColumn fx:id="columnaMarca" prefWidth="75.0" text="Marca" />
+                <TableColumn fx:id="columnaModelo" prefWidth="75.0" text="Modelo" />
+                  <TableColumn fx:id="columnaMatricula" prefWidth="82.0" text="Matricula" />
+                  <TableColumn fx:id="columnaTipoRevision" prefWidth="112.0" text="Tipo Revisión" />
+                  <TableColumn fx:id="columaFechaRevision" prefWidth="120.0" text="Fecha ITV" />
+                  <TableColumn fx:id="columnaFechaSeguro" prefWidth="131.0" text="Fecha Seguro" />
+                  <TableColumn fx:id="columnaPrecioSeguro" prefWidth="122.0" text="Precio Seguro" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="20.0" right="20.0" />
+         </BorderPane.margin>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="botonITV" mnemonicParsing="false" onAction="#abrirNavegador" prefHeight="75.0" prefWidth="166.0" styleClass="botonITV" stylesheets="@HojaDeEstilo.css" text="ITV" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+               <tooltip>
+                  <Tooltip text="Coger cita ITV" />
+               </tooltip>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#salirAltaVehiculo" prefHeight="46.0" prefWidth="146.0" stylesheets="@HojaDeEstilo.css" text="Salir">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="395.0" prefWidth="600.0" stylesheets="@HojaDeEstilo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managervehiculePrincipal.vistas.VistaPrincipalController">
+   <top>
+      <VBox prefHeight="88.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar fx:id="menu" stylesheets="@HojaDeEstilo.css">
+              <menus>
+                <Menu fx:id="menuArchivo" mnemonicParsing="false" text="Archivo">
+                  <items>
+                    <MenuItem fx:id="itemAnnadir" mnemonicParsing="false" onAction="#annadirVehiculo" text="Añadir" />
+                        <MenuItem fx:id="itemConsultar" mnemonicParsing="false" onAction="#consultarVehiculos" text="Consultar" />
+                        <MenuItem fx:id="itemSalir" mnemonicParsing="false" onAction="#salirAplicacion" text="Salir" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menuOpciones" mnemonicParsing="false" text="Opciones">
+                  <items>
+                    <MenuItem fx:id="itemInforme" mnemonicParsing="false" text="Crear Informe" />
+                  </items>
+                </Menu>
+                <Menu fx:id="manueAyuda" mnemonicParsing="false" text="Ayuda">
+                  <items>
+                    <MenuItem fx:id="itemAyudaLinea" mnemonicParsing="false" text="En Linea" />
+                        <MenuItem fx:id="itemAyudaManuel" mnemonicParsing="false" text="Manual" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="56.0" prefWidth="600.0" styleClass="toolbar" stylesheets="@HojaDeEstilo.css">
+              <items>
+                  <Button fx:id="herramientaBuscar" mnemonicParsing="false" onAction="#consultarVehiculos" prefHeight="35.0" prefWidth="30.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/file.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Consultar Vehículos" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="herramientaCrearInforme" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/negociosYFinanzas.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Crear Informe" />
+                     </tooltip>
+                  </Button>
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <GridPane prefHeight="201.0" prefWidth="600.0" styleClass="background" stylesheets="@HojaDeEstilo.css" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="109.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="193.0" minHeight="0.0" prefHeight="81.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="botonAnnadir" mnemonicParsing="false" onAction="#annadirVehiculo" prefHeight="68.0" prefWidth="182.0" text="ALTA" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <tooltip>
+                  <Tooltip text="Dar alta un vehículo" />
+               </tooltip>
+            </Button>
+            <Button fx:id="botonConsultar" mnemonicParsing="false" onAction="#consultarVehiculos" prefHeight="68.0" prefWidth="182.0" text="CONSULTAR" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <tooltip>
+                  <Tooltip text="Consultar vehículos" />
+               </tooltip></Button>
+            <Button fx:id="botonSalir" mnemonicParsing="false" onAction="#salirAplicacion" prefHeight="56.0" prefWidth="128.0" text="SALIR" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <tooltip>
+                  <Tooltip text="Salir de la aplicación" />
+               </tooltip></Button>
+            <Label prefHeight="33.0" prefWidth="154.0" text="ITVSEGURO" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </GridPane>
+   </center>
+</BorderPane>
