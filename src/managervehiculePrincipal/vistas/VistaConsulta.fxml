@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.Tooltip?>
@@ -42,10 +43,16 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="botonITV" mnemonicParsing="false" onAction="#abrirNavegador" prefHeight="75.0" prefWidth="166.0" styleClass="botonITV" stylesheets="@HojaDeEstilo.css" text="ITV" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+            <Button fx:id="botonITV" mnemonicParsing="false" prefHeight="75.0" prefWidth="166.0" styleClass="botonITV" stylesheets="@HojaDeEstilo.css" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                <tooltip>
                   <Tooltip text="Coger cita ITV" />
                </tooltip>
+               <graphic>
+                  <Hyperlink onAction="#abrirNavegador" prefHeight="95.0" prefWidth="330.0" stylesheets="@HojaDeEstilo.css" text="ITV" textFill="#f80101">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding></Hyperlink>
+               </graphic>
             </Button>
             <Button mnemonicParsing="false" onAction="#salirAltaVehiculo" prefHeight="46.0" prefWidth="146.0" stylesheets="@HojaDeEstilo.css" text="Salir">
                <opaqueInsets>

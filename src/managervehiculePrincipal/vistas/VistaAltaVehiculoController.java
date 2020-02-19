@@ -93,6 +93,8 @@ public class VistaAltaVehiculoController implements Initializable {
         
         insertarVehiculo(db, vehiculo);
         
+        limpiarFormulario();
+        
         db.close();
     }
     
@@ -164,6 +166,17 @@ public class VistaAltaVehiculoController implements Initializable {
 
     void setVentana(Stage dialogStage) {
        this.primaryStage = dialogStage;
+    }
+
+    private void limpiarFormulario() {
+        textMarca.setText("");
+        textModelo.setText("");
+        textMatricula.setText("");
+        comboTipoRevision.setValue("");
+        textFechaRevision.setText("");
+        textFechaSeguro.setText("");
+        textPrecioSeguro.setText("");
+        
     }
     
 }
